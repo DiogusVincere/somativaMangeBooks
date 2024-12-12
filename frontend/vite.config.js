@@ -12,5 +12,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  base: '/',  // Ajuste para o subdiretório onde o projeto será acessado
+  base: '/meu-projeto-mange-book/',  // Ajuste para o subdiretório onde o projeto será acessado
 })

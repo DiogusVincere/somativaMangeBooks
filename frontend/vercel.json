@@ -8,6 +8,10 @@
     ],
     "routes": [
       {
+        "src": "/meu-projeto-mange-book/(.*)",
+        "dest": "/dist/$1"
+      },
+      {
         "src": "/(.*)",
         "dest": "/dist/index.html"
       }

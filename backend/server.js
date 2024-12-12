@@ -12,9 +12,10 @@ const reportsRoutes = require('./routes/reportsRoutes')
 
 const app = express();
 
-// Configura o CORS antes das rotas
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: process.env.NODE_ENV === 'production'
+      ? 'https://meu-projeto-mange-book-e14i6a52p-diogusvinceres-proects.vercel.app' // URL do seu frontend em produção
+      : 'http://localhost:5173', // URL do frontend no desenvolvimento
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 

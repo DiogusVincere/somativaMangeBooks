@@ -27,7 +27,7 @@ app.use(express.json());
 // Configura as rotas
 app.use('/books', books);
 app.use('/api/auth', authRoutes);
-app.use('/reviews', reviewRoutes);
+app.use('/api/reviews', reviewRoutes);
 app.use('/api/reservations', reservationRoutes);
 app.use('/api/reports', reportsRoutes);
 

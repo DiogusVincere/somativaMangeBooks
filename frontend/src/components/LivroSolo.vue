@@ -112,7 +112,7 @@ export default {
     async submitReview() {
       try {
         const response = await axios.post(
-          'http://localhost:5000/reviews/addReview',
+          'http://localhost:5000/api/reviews/addReview',
           {
             bookId: this.livro._id,
             rating: this.newReview.rating,

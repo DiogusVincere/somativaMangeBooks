@@ -30,9 +30,8 @@ const addTokenInterceptor = (apiInstance) => {
     }
   );
 };
-
-// Aplicar o interceptor às duas instâncias
 addTokenInterceptor(apiWithPrefix);
 addTokenInterceptor(apiWithoutPrefix);
 
-export { apiWithPrefix, apiWithoutPrefix };
+// Exportando uma das instâncias como default, se desejado
+export default apiWithPrefix; // ou export default apiWithoutPrefix

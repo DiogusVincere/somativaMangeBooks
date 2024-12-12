@@ -6,15 +6,19 @@ const api = axios.create({
 
 // Instância para rotas com '/api'
 export const apiWithPrefix = axios.create({
-  baseURL: 'http://localhost:5000/api/', // Base para rotas com '/api'
+  baseURL: process.env.NODE_ENV === 'production'
+    ? 'https://backend-qw27yrwzw-diogusvinceres-projects.vercel.app/api'
+    : 'http://localhost:5000/api', // URL do backend em desenvolvimento
 });
 
 // Instância para rotas sem '/api'
 export const apiWithoutPrefix = axios.create({
-  baseURL: 'http://localhost:5000', // Base para rotas sem '/api'
+  baseURL: process.env.NODE_ENV === 'production'
+    ? 'https://backend-qw27yrwzw-diogusvinceres-projects.vercel.app'
+    : 'http://localhost:5000', // URL do backend em desenvolvimento
 });
 
-// Adicionando interceptor para incluir o token nas requisições (para ambas as instâncias)
+// Adicionando interceptor para incluir o token nas requisições
 const addTokenInterceptor = (apiInstance) => {
   apiInstance.interceptors.request.use(
     (config) => {
@@ -30,6 +34,8 @@ const addTokenInterceptor = (apiInstance) => {
     }
   );
 };
+
+// Aplica o interceptor para as instâncias com e sem '/api'
 addTokenInterceptor(apiWithPrefix);
 addTokenInterceptor(apiWithoutPrefix);
 

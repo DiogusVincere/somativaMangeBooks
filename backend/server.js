@@ -13,11 +13,10 @@ const reportsRoutes = require('./routes/reportsRoutes')
 const app = express();
 
 app.use(cors({
-    origin: process.env.NODE_ENV === 'production'
-      ? 'https://meu-projeto-mange-book-e14i6a52p-diogusvinceres-proects.vercel.app' // URL do seu frontend em produção
-      : 'http://localhost:5173', // URL do frontend no desenvolvimento
+    origin: ['http://localhost:5173', 'https://meu-projeto-mange-book-e14i6a52p-diogusvinceres-ects.vercel.app'], // Adicione o seu domínio de produção
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-}));
+  }));
+  
 
 app.use(bodyParser.json());
 app.use('/uploads', express.static('uploads'));

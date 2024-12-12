@@ -97,7 +97,7 @@ const routes = [
 
 // Crie o router
 const router = createRouter({
-  history: createWebHistory(), // Usar o modo history
+  history: createWebHistory('/'), // Usar o modo history
   routes // Rotas
 });
 

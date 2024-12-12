@@ -13,7 +13,7 @@ const reportsRoutes = require('./routes/reportsRoutes')
 const app = express();
 
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://meu-projeto-mange-book-e14i6a52p-diogusvinceres-ects.vercel.app'], // Adicione o seu domínio de produção
+    origin: '*', // Adicione o seu domínio de produção
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
   }));
   
